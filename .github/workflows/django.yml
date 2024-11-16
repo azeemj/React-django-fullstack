@@ -28,3 +28,18 @@ jobs:
     - name: Run Tests
       run: |
         python backend/manage.py test
+
+    - name: Run unit tests and save results
+      run: |
+        pytest --junitxml=test-results.xml
+        continue-on-error: true
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+          name: test-results
+          path: test-results.xml
+          
+    - name: Post results summary
+      run: |
+       echo "## Test Results: [Download Test Report](./test-results.xml)" >> $GITHUB_STEP_SUMMARY
