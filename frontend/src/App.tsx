@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes, Navigation, Navigate } from "react-router-dom"
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import Home from "./pages/Home"
@@ -13,10 +13,10 @@ const Logout = () => {
   return <Navigate to="/login"></Navigate>
 }
 
-const RegisterAndLogout = () => {
-  localStorage.clear();
-  return <Register></Register>
-}
+// const RegisterAndLogout = () => {
+//   localStorage.clear();
+//   return <Register></Register>
+// }
 function App() {
   
 

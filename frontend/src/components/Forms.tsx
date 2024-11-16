@@ -32,7 +32,7 @@ function Form({route, method} : {route: string, method: "login" | "register" | "
         }catch(error){
             alert(error)
         }finally{   
-            setLoading(false);
+            setLoading("");
         }
     }
     return (<form onSubmit={handleSubmit} className="form-container">
